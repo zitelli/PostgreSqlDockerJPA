@@ -1,20 +1,23 @@
 
-# Java: persistência de dados e consultas com Spring Data JPA
+# Java: data persistence and queries with Spring Data JPA
 
-Projeto desenvolvido no segundo curso da formação Avançando com Java da Alura
+Project developed in the second course of Alura's Advancing with Java training.
 
+## 🔨 Project objectives
 
-## 🔨 Objetivos do projeto
+- Evolve in the Screenmatch project, started in the first training course, creating a menu with several options;
+- Model application abstractions through classes, enums, attributes and methods;
+- Consume the ChatGPT API (in this project we are not using ChatGPT, but the translation api at https://www.omdbapi.com/;
+- Use Spring Data JPA to persist data in the database;
+- Know various types of databases and use PostgreSQL via Docker Compose. Execute command in the project directory: docker compose up -d; Or to stop docker compose down;
+- Work with various types of database queries;
+- Dive deeper into the JPARepository interface
 
-- Evoluir no projeto Screenmatch, iniciado no primeiro curso da formação, criando um menu com várias opções;
-- Modelar as abstrações da aplicação através de classes, enums, atributos e métodos;
-- Consumir a API do ChatGPT (neste projeto não se está utilizando o ChatGPT, mas a api de tradução em https://www.omdbapi.com/;
-- Utilizar o Spring Data JPA para persistir dados no banco;
-- Conhecer vários tipos de banco de dados e utilizar o PostgreSQL via Docker Compose. Comando de execução no diretório do projeto: docker compose up -d; Ou para parar docker compose down;
-- Trabalhar com vários tipos de consultas ao banco de dados;
-- Aprofundar na interface JPARepository
+When assembling the project, you will need:
+- create the directories: pgadmin_data, postgres_data, redis.conf, redis_data (this project is not using Redis yet)
 
-É necessário na montagem do projeto:
-- criar os diretórios: pgadmin_data, postgres_data, redis.conf, redis_data (neste projeto ainda não está se utilizando o Redis)
+When the project is running, the database can be consulted by pgadmin at the local address: http:\\localhost:16543
 
-Quando o projeto estiver rodando, poderá ser consultado o database pelo pgadmin pelo endereço local: http:\\localhost:16543
+It is necessary to create a .env file in the project's local directory to maintain the API_KEY for accessing the API. Here's an example:
+
+API_KEY = "&apikey=65xxxxxxxc"
