@@ -4,6 +4,7 @@ import br.com.alura.screenmatch.model.*;
 import br.com.alura.screenmatch.repository.SerieRepository;
 import br.com.alura.screenmatch.service.ConsumoApi;
 import br.com.alura.screenmatch.service.ConverteDados;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,11 +15,13 @@ public class Principal {
     private ConsumoApi consumo = new ConsumoApi();
     private ConverteDados conversor = new ConverteDados();
     private final String ENDERECO = "https://www.omdbapi.com/?t=";
-    private final String API_KEY = "&apikey=xxxxxxx";
     private List<DadosSerie> dadosSeries = new ArrayList<>();
     private SerieRepository repositorio;
     private List<Serie> series = new ArrayList<>();
     Optional<Serie> serieBuscada;
+
+    Dotenv dotenv = Dotenv.load();
+    private final String API_KEY = dotenv.get("API_KEY");
 
     public Principal(SerieRepository repositorio) {
         this.repositorio = repositorio;
